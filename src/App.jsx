@@ -2,19 +2,20 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="home">
-      <div className="content">
-        <div>
-          <input type="text" placeholder="please write the name of the city" />
-          <i className=" lupa fa-solid fa-magnifying-glass" />
-        </div>
-        <div className="results">
-          <h2> Santa Cruz</h2>
-          <p>38°</p>
-          <span  >Mayormente despejado</span>
-          <p>H: 18° L: 13°</p>
-        </div>
-        <div className="details">
+    <div className="content">
+      <div>
+        <input type="text" placeholder="Por favor escribe el nombre de la ciudad" />
+        <i className=" lupa fa-solid fa-magnifying-glass" />
+      </div>
+      <div className="results">
+        <h2> Santa Cruz</h2>
+        <p>38°</p>
+        <span>Mayormente despejado</span>
+        <p>H: 18° L: 13°</p>
+      </div>
+
+      <div className="details">
+        <div className="cart">
           <div className="temperatura">
             <i className="fa-solid fa-temperature-low" />
             <div className="det">
@@ -22,14 +23,19 @@ function App() {
               <p>14°</p>
             </div>
           </div>
+        </div>
 
+        <div className="cart">
           <div className="gota">
-            <i className="fa-solid fa-droplet" />
-            <div className="det">
+            <i className="  fa-solid fa-droplet" />
+            <div className="det ">
               <p>Humedad</p>
               <p>15%</p>
             </div>
           </div>
+        </div>
+
+        <div className="cart">
           <div className="nube">
             <i className="fa-solid fa-cloud" />
             <dev className="det">
@@ -37,6 +43,9 @@ function App() {
               <p>20%</p>
             </dev>
           </div>
+        </div>
+
+        <div className="cart">
           <div className="direccion">
             <i className="fa-solid fa-arrow-right" />
             <div className="det">
@@ -44,6 +53,9 @@ function App() {
               <p>de norte a sur</p>
             </div>
           </div>
+        </div>
+
+        <div className="cart">
           <div className="viento">
             <i className="fa-solid fa-wind" />
             <div className="det">
@@ -51,6 +63,9 @@ function App() {
               <p>3mph</p>
             </div>
           </div>
+        </div>
+
+        <div className="cart">
           <div className="presion">
             <i className="fa-solid fa-chart-line" />
             <div className="det">
@@ -58,6 +73,8 @@ function App() {
               <p>1015mb</p>
             </div>
           </div>
+        </div>
+        <div className="cart">
           <div className="ojo">
             <i className="fa-regular fa-eye" />
             <div className="det">

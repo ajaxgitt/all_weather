@@ -1,30 +1,34 @@
-#root {
-  max-width: 1280px;
-  text-align: center;
-}
 * {
   margin: 0;
 }
 
+#root {
+  max-width: 1280px;
+}
 
+:root {
+  --border-color: linear-gradient(
+    to right,
+    rgb(255, 99, 71, 0.7) 0%,
+    rgb(255, 215, 0.5) 100%
+  );
+  --card-color: #222;
+}
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px;
-  overflow: hidden;
-}
-
-.home {
-  width: 80vw;
-  height: auto;
+  text-align: center;
 }
 
 .content {
   width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .content input {
@@ -35,7 +39,11 @@ body {
   width: 80%;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
+
+  box-shadow: 0 4px 22px rgba(255, 255, 255, 0.2),
+    0 8px 24px rgba(255, 255, 255, 0.1);
 }
+
 .content input::placeholder {
   color: white;
 }
@@ -57,26 +65,97 @@ body {
   font-size: 25px;
 }
 
-
-.results span{
-  animation: aumentarYReducir 2s infinite; 
-
+.results h2 {
+  background-image: linear-gradient(
+    to right,
+    rgb(77, 210, 255) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+}
+.results span {
+  animation: aumentarYReducir 2s infinite;
 }
 
 .details {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 25px;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.details > div {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 15px;
-  border-radius: 10px;
+.details .cart > div {
+  background: var(--card-color);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.gota i {
+  color: rgb(61, 246, 249);
+  border: 2px solid rgb(61, 246, 249) !important;
+}
+
+.nube i {
+  background-image: linear-gradient(
+    to right,
+    rgb(77, 210, 255) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  border: 2px solid skyblue !important;
+}
+
+.temperatura i {
+  background-image: var(--border-color);
+  background-clip: text;
+  color: transparent;
+
+  border: 2px solid goldenrod !important ;
+}
+
+.presion i {
+  color: tomato;
+  border: 2px solid tomato !important;
+}
+
+.viento i {
+  background-image: linear-gradient(
+    to right,
+    rgb(173, 216, 230) 0%,
+    rgb(70, 130, 180) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  border: 2px solid rgb(0, 242, 255) !important;
+}
+
+.ojo i {
+  color: aquamarine;
+  border: 2px solid aquamarine !important;
+}
+
+.direccion i {
+  color: green;
+  border: 2px solid green !important;
+}
+
+.cart {
+  background: var(--border-color);
+  aspect-ratio: 10/4;
+  width: 100%;
+  padding: 5px;
+  border-radius: 16px;
+  position: relative;
 }
 
 .details i {
@@ -86,42 +165,76 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  animation: logo-spin 5s infinite;
-
+  font-size: 22px;
 }
 
 .det {
   display: flex;
+  align-items: end !important;
   flex-direction: column;
-  align-items: end;
-
-
-}
-
-
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 10px;
 }
 
 @keyframes aumentarYReducir {
   0% {
-    transform: scale(1); 
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.1); 
+    transform: scale(1.1);
   }
   100% {
-    transform: scale(0.9); /* Reducir al 50% de su tamaño */
+    transform: scale(0.9);
   }
 }
 
+@media (max-width: 668px) {
+  body {
+    width: 100vw !important;
+    padding: 0px;
+  }
+
+  .content .lupa {
+    display: none;
+  }
+
+  .content {
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 20px;
+
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart {
+    background: var(--border-color);
+    aspect-ratio: 10/3;
+    width: 100%;
+    padding: 5px;
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .details .cart > div {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+}
